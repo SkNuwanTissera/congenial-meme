@@ -1,5 +1,6 @@
 import ballerinax/trigger.asgardeo;
 import ballerina/http;
+import ballerina/log;
 
 configurable asgardeo:ListenerConfig config = ?;
 
@@ -10,6 +11,7 @@ service asgardeo:UserOperationService on webhookListener {
   
     remote function onLockUser(asgardeo:GenericEvent event ) returns error? {
       //Not Implemented
+      log:printInfo("OnLock");
     }
     remote function onUnlockUser(asgardeo:GenericEvent event ) returns error? {
       //Not Implemented
